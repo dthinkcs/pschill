@@ -1,6 +1,6 @@
+// TLE 
 // 9
 // 75 131 977 305 220 957 47 56 840
-
 #include <iostream>
 #include <bits/stdc++.h>
 using namespace std;
@@ -9,14 +9,18 @@ using namespace std;
 bool fn(int* arr, int n, int sumByTwo, map<pair<int, int>, int>& memo, int sumSoFar = 0) 
 {
     if (memo.count({sumSoFar, n}) != 0) {
-        return memo[{sumSoFar, n}]; //true;//memo[{sumSoFar, n}];
+        return memo[{sumSoFar, n}];
     }
 
     if (sumSoFar > sumByTwo) {
+        //return false;
+        memo[{sumSoFar, n}] = false;
         return false;
     }
 
     if (sumSoFar == sumByTwo) {
+        // return true;
+        memo[{sumSoFar, n}] = true;
         return true;
     }
     
